@@ -1,13 +1,13 @@
 Name:           redkite
-Version:        0.6.3
-Release:        3%{?dist}
+Version:        1.2.0
+Release:        1%{?dist}
 Summary:        A small software GUI toolkit
 
 License:        GPLv3+
-URL:            https://gitlab.com/geontime/redkite
-Source0:        https://github.com/geontime/%{name}/archive/v%{version}.tar.gz
+URL:            https://gitlab.com/iurie-sw/redkite
+Source0:        https://github.com/iurie-sw/%{name}/archive/v%{version}.tar.gz
 
-BuildRequires:  cmake
+BuildRequires:  cmake gcc gcc-c++
 BuildRequires:  cairo-devel
 
 %description
@@ -40,11 +40,15 @@ cd build
 %license LICENSE
 %doc README.md
 %{_bindir}/rkpng2c
+%{_mandir}/man1/rkpng2c.1*
 
 %files -n %{name}-devel
 %{_libdir}/lib%{name}.a
 %{_includedir}/%{name}/*.h
 
 %changelog
+* Thu Nov 05 2020 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 1.2.0-1
+- Update to 1.2.0
+
 * Fri Jan 24 2020 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.6.3-1
 - Initial build
